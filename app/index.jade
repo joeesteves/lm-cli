@@ -1,0 +1,21 @@
+html(ng-app='lm')
+  head
+    title Hola Mundo
+    //- inject:css
+    link(rel="stylesheet", href="/dist/styles/app.css")
+    //- endinject
+    //- bower:css
+    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+    //- endinject
+  body
+    //- bower:js
+    script(src="/bower_components/angular/angular.js")
+    script(src="/bower_components/jquery/dist/jquery.js")
+    //- endinject
+    //- inject:js
+    script(src="/dist/main.js")
+    script(src="/dist/controllers/otro.js")
+    script(src="/dist/controllers/prueba.js")
+    //- endinject
+    span {{ 8 * 8 }}
