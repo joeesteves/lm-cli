@@ -1,0 +1,28 @@
+div.col-xs-8.col-xs-offset-2
+  h4.text-center FERTILIZADORAS
+  h4.text-center (01/07/2014 al 30/06/2015)
+  img(class='tapas' src='/images/fert_tapa.png')
+  img(class='tapas' src='/images/fert_tapa2.png')
+  div.footer
+  div(class='table-div panel panel-default' ng-repeat='(k,v) in obj')
+    div(class='panel-heading text-center')  {{k}}
+    table.table
+      tr
+        td(class='fisicos' colspan=3) Fisicos
+        td(colspan=4) Economicos U$S
+      tr
+        th.fisicos Gasoil
+        th.fisicos Has.
+        th.fisicos Horas
+        th Otros
+        th Gasoil
+        th Personal
+        th Total
+      tr
+        td.fisicos {{v.gasoil.cantidad}} 
+        td.fisicos {{v.superficie}}
+        td.fisicos {{v.horas}}
+        td {{v.gastos_varios}}
+        td {{v.gasoil.costo}}
+        td {{v.sueldos}}
+        td {{}}

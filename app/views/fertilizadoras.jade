@@ -1,0 +1,36 @@
+div
+  div.row
+    form.col-xs-6.col-xs-offset-3.central
+      div
+        div(class='col-xs-8 alert alert-info')
+          h4.text-center LABORES
+          input(type='file' file-upload='labores')
+        div(ng-class='div_base + div.labores')
+          span(ng-class='css_base + css.labores')
+      div
+        div(class='alert alert-info col-xs-8')
+          h4.text-center MANTENIMIENTO
+          input(type='file' file-upload='mantenimiento')
+        div(ng-class='div_base + div.mantenimiento')
+          span(ng-class='css_base + css.mantenimiento')
+      div
+        div(class='alert alert-info col-xs-8')
+          h4.text-center COMPRAS
+          input(type='file' file-upload='compras')
+        div(ng-class='div_base + div.compras')
+          span(ng-class='css_base + css.compras')
+      div
+        div(class='alert alert-info col-xs-8')
+          h4.text-center SUELDOS
+          input(type='file' file-upload='sueldos')
+        div(ng-class='div_base + div.sueldos')
+          span(ng-class='css_base + css.sueldos')
+      div(class='row' style='height:60px')
+        div(class='col-xs-7')
+          span.badge GASOIL COT
+          input(type='text' ng-model='precio_gasoil' style="height:60%")
+        div(class='col-xs-5')
+          a(class='btn btn-success btn-lg' href='#/fertilizadoras/reporte') GENERAR 
+  div.row
+    div(ng-repeat='(k,v) in obj' class='col-xs-6.col-xs-offset-3.central' style='height:60px')
+      {{k}}  --- {{v.superficie}}

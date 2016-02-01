@@ -1,21 +1,25 @@
-html(ng-app='lm')
+html(ng-app='Lm')
   head
-    title Hola Mundo
+    title Last Mile 
     //- inject:css
-    link(rel="stylesheet", href="/dist/styles/app.css")
+    link(rel="stylesheet", href="/styles/app.css")
     //- endinject
     //- bower:css
-    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
-    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/vendor/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="/vendor/bootstrap.min.css")
     //- endinject
   body
     //- bower:js
-    script(src="/bower_components/angular/angular.js")
-    script(src="/bower_components/jquery/dist/jquery.js")
+    script(src="/vendor/angular.js")
+    script(src="/vendor/jquery.js")
+    script(src="/vendor/angular-route.js")
     //- endinject
     //- inject:js
-    script(src="/dist/main.js")
-    script(src="/dist/controllers/otro.js")
-    script(src="/dist/controllers/prueba.js")
+    script(src="/main.js")
+    script(src="/controllers/fertilizadoras.js")
+    script(src="/controllers/fertilizadoras_reporte.js")
+    script(src="/directives/upload.js")
+    script(src="/routes/general.js")
+    script(src="/services/upload.js")
     //- endinject
-    span {{ 8 * 8 }}
+    ng-view

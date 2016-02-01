@@ -1,2 +1,0 @@
-prueba = ->
-	alert('probando carpetas')

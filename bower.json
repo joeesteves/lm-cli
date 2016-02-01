@@ -10,11 +10,12 @@
   "homepage": "",
   "dependencies": {
     "angular": "~1.4.9",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "angular-route": "~1.4.9"
   },
   "overrides": {
     "bootstrap": {
-        "main": "**/*.min.css"
+      "main": "**/*.min.css"
     }
   }
 }
