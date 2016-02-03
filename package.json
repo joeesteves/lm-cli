@@ -21,8 +21,5 @@
     "gulp-util": "^3.0.7",
     "gulp-webserver": "^0.9.1",
     "main-bower-files": "^2.11.1"
-  },
-  "scripts": {
-    "start": "gulp prod"
   }
 }

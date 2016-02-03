@@ -77,11 +77,10 @@ gulp.task('default',['coffee', 'css', 'vendor', 'injects', 'jade', 'webserver'],
 gulp.task('prod', function() {
   gulp.src('dist')
     .pipe(webserver({
+      host: '0.0.0.0',
+      port: process.env.PORT || 80,
       livereload: false,
       directoryListing: false,
-      open: true,
-      middleware: function(req, res, next) {
-        next();
-      }
+      open: true
   }));
 });
