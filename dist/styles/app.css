@@ -25,6 +25,7 @@ table {
 }
 
 .tapas {
+  display: none;
   width: 800px;
 }
 div.footer {
@@ -32,20 +33,27 @@ div.footer {
   page-break-before:always;
 }
 @media print {
+  div {
+    float: none !important;
+  }
   .table th.fisicos,.table td.fisicos {
     background-color: beige !important;
 }
   .table-div {
+    position: relative;
     page-break-inside: avoid;
     }
   div .panel-heading {
     font-size: smaller;
   }
   .tapas {
+    display: block;
     width: 1050px;
   }
+  .separador {
+    height: 150px;
+  }
   div.footer {
-    display:block;
-    page-break-before:always;
+    page-break-after:always !important;
   }
 }

@@ -1,11 +1,13 @@
-div.col-xs-8.col-xs-offset-2
-  h4.text-center FERTILIZADORAS
+div.col-xs-10.col-xs-offset-1
+  h2.text-center FERTILIZADORAS
   h4.text-center (01/07/2014 al 30/06/2015)
+  br
   img(class='tapas' src='/images/fert_tapa.png')
+  div.separador
   img(class='tapas' src='/images/fert_tapa2.png')
   div.footer
-  div(class='table-div panel panel-default' ng-repeat='(k,v) in obj')
-    div(class='panel-heading text-center')  {{k}}
+  div(class='table-div panel panel-default' ng-repeat='i in obj')
+    div(class='panel-heading text-center')  {{i.nombre}}
     table.table
       tr
         td(class='fisicos' colspan=3) Fisicos
@@ -17,12 +19,23 @@ div.col-xs-8.col-xs-offset-2
         th Otros
         th Gasoil
         th Personal
+        th Depreciación
         th Total
       tr
-        td.fisicos {{v.gasoil.cantidad}} 
-        td.fisicos {{v.superficie}}
-        td.fisicos {{v.horas}}
-        td {{v.gastos_varios}}
-        td {{v.gasoil.costo}}
-        td {{v.sueldos}}
+        td.fisicos {{i.gasoil.cantidad}} 
+        td.fisicos {{i.superficie}}
+        td.fisicos {{i.horas}}
+        td {{i.gastos_varios}}
+        td {{i.gasoil.costo}}
+        td {{i.sueldos}}
+        td {{i.sueldos}}
+        td {{}}
+      tr
+        td.fisicos {{i.gasoil.cantidad}} 
+        td.fisicos {{i.superficie}}
+        td.fisicos {{i.horas}}
+        td {{i.gastos_varios}}
+        td {{i.gasoil.costo}}
+        td {{i.sueldos}}
+        td {{i.sueldos}}
         td {{}}

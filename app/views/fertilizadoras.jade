@@ -10,9 +10,9 @@ div
       div
         div(class='alert alert-info col-xs-8')
           h4.text-center MANTENIMIENTO
-          input(type='file' file-upload='mantenimiento')
-        div(ng-class='div_base + div.mantenimiento')
-          span(ng-class='css_base + css.mantenimiento')
+          input(type='file' file-upload='mantenimientos')
+        div(ng-class='div_base + div.mantenimientos')
+          span(ng-class='css_base + css.mantenimientos')
       div
         div(class='alert alert-info col-xs-8')
           h4.text-center COMPRAS
@@ -33,4 +33,4 @@ div
           a(class='btn btn-success btn-lg' href='#/fertilizadoras/reporte') GENERAR 
   div.row
     div(ng-repeat='(k,v) in obj' class='col-xs-6.col-xs-offset-3.central' style='height:60px')
-      {{k}}  --- {{v.superficie}}
+    |  {{k}}  --- {{v.superficie}}
