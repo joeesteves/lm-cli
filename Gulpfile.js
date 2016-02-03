@@ -72,3 +72,16 @@ gulp.task('default',['coffee', 'css', 'vendor', 'injects', 'jade', 'webserver'],
   gulp.watch('app/**/*.jade', ['jade']);
   gulp.watch('app/**/*.css', ['css'])
 })
+
+
+gulp.task('prod', function() {
+  gulp.src('dist')
+    .pipe(webserver({
+      livereload: false,
+      directoryListing: false,
+      open: true,
+      middleware: function(req, res, next) {
+        next();
+      }
+  }));
+});
