@@ -1,8 +1,12 @@
 angular.module('Lm').controller('FertilizadorasCtrl', function($timeout, $rootScope, $scope, $http, Upload) {
-  var ruta_rep;
+  var reporte, reporte_nombre, ruta_rep, ruta_up;
   ruta_rep = $rootScope.rootPath + 'reporteador';
-  $scope.upload = function(tipo, file) {
-    return Upload.file(ruta_rep, tipo, file).then(function() {
+  ruta_up = $rootScope.rootPath + 'uploader';
+  reporte_nombre = 'fertilizadoras';
+  reporte = '';
+  $scope.upload = function(tipo, file, reporte_attr) {
+    reporte = reporte_attr || reporte_nombre;
+    return Upload.file(ruta_up, tipo, file, reporte).then(function() {
       return $scope.check_status(tipo);
     })["catch"](function() {
       $scope.css[tipo] = 'glyphicon-remove';
@@ -14,17 +18,17 @@ angular.module('Lm').controller('FertilizadorasCtrl', function($timeout, $rootSc
     labores: 'glyphicon-minus',
     mantenimientos: 'glyphicon-minus',
     compras: 'glyphicon-minus',
-    sueldos: 'glyphicon-minus'
+    personas: 'glyphicon-minus'
   };
   $scope.div_base = 'btn col-xs-2 ';
   $scope.div = {
     labores: 'btn-info',
     mantenimientos: 'btn-info',
     compras: 'btn-info',
-    sueldos: 'btn-info'
+    personas: 'btn-info'
   };
   $scope.generar = function() {
-    return $http.get(ruta + '?tipo=fertilizadoras').then(function(resp) {
+    return $http.get(ruta_rep + '?tipo=' + reporte_nombre).then(function(resp) {
       $scope.obj = resp.data;
       return console.log(resp);
     });
@@ -32,7 +36,7 @@ angular.module('Lm').controller('FertilizadorasCtrl', function($timeout, $rootSc
   return $scope.check_status = function(tipo) {
     var ref, ruta_estado;
     ruta_estado = $rootScope.rootPath + 'estados/check';
-    ref = 'fertilizadoras_' + tipo;
+    ref = reporte + '_' + tipo;
     return $http.post(ruta_estado, {
       referencia: ref
     }).then(function(resp) {

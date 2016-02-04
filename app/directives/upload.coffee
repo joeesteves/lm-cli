@@ -3,6 +3,6 @@ angular.module 'Lm'
   restrict: 'A'
   link: (scope, elm, attr) ->
     elm.bind 'change', ->
-      scope.upload(attr.fileUpload, elm[0].files[0])
+      scope.upload(attr.fileUpload, elm[0].files[0], attr.reporte)
       scope.css[attr.fileUpload] = 'glyphicon-time'
       scope.div[attr.fileUpload] = 'btn-warning'

@@ -1,10 +1,14 @@
 angular.module 'Lm'
 .controller 'FertilizadorasCtrl', ($timeout, $rootScope, $scope, $http, Upload) ->
   ruta_rep = $rootScope.rootPath + 'reporteador'
+  ruta_up = $rootScope.rootPath + 'uploader'
 
+  reporte_nombre = 'fertilizadoras'
+  reporte = ''
   # Utiliza la directiva uploadFile
-  $scope.upload = (tipo, file) ->
-    Upload.file(ruta_rep, tipo, file)
+  $scope.upload = (tipo, file, reporte_attr) ->
+    reporte = reporte_attr || reporte_nombre
+    Upload.file(ruta_up, tipo, file, reporte)
     .then () ->
       $scope.check_status(tipo)
     .catch () ->
@@ -12,19 +16,19 @@ angular.module 'Lm'
       $scope.div[tipo] = 'btn-danger'
 
   $scope.css_base = 'glyphicon upload-indicador '
-  $scope.css = {labores: 'glyphicon-minus', mantenimientos: 'glyphicon-minus', compras: 'glyphicon-minus', sueldos: 'glyphicon-minus'}
+  $scope.css = {labores: 'glyphicon-minus', mantenimientos: 'glyphicon-minus', compras: 'glyphicon-minus', personas: 'glyphicon-minus'}
   $scope.div_base = 'btn col-xs-2 '
-  $scope.div = {labores: 'btn-info', mantenimientos: 'btn-info', compras: 'btn-info', sueldos: 'btn-info'}
+  $scope.div = {labores: 'btn-info', mantenimientos: 'btn-info', compras: 'btn-info', personas: 'btn-info'}
 
   $scope.generar = () ->
-    $http.get(ruta + '?tipo=fertilizadoras').then (resp) ->
+    $http.get(ruta_rep + '?tipo=' + reporte_nombre).then (resp) ->
       $scope.obj = resp.data
       console.log(resp)
 
   $scope.check_status = (tipo) ->
     # console.log tipo
     ruta_estado = $rootScope.rootPath + 'estados/check'
-    ref = 'fertilizadoras_' + tipo
+    ref = reporte + '_' + tipo
     $http.post(ruta_estado, {referencia: ref})
     .then (resp) ->
       switch resp.data
