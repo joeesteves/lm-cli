@@ -16,4 +16,6 @@
 !/log/.keep
 /tmp
 /bower_components
+/dist
+/node_modules
 /.byebug_history
