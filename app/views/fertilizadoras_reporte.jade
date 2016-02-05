@@ -9,33 +9,55 @@ div.col-xs-10.col-xs-offset-1
   div(class='table-div panel panel-default' ng-repeat='i in obj')
     div(class='panel-heading text-center')  {{i.nombre}}
     table.table
+      tr.headers
+        td(colspan=9) 
+          h4.text-center {{i.nombre}}
       tr
-        td(class='fisicos' colspan=3) Fisicos
-        td(colspan=4) Economicos U$S
+        td(rowspan=2)
+        td(class='fisicos left right' colspan=3)
+          h5 Fisicos
+        td(colspan=5) 
+          h5 Economicos U$S
       tr
-        th.fisicos Gasoil
+        th.fisicos.left Gasoil
         th.fisicos Has.
-        th.fisicos Horas
-        th Otros
+        th.fisicos.right Hs.
         th Gasoil
-        th Personal
-        th Depreciación
+        th Pers.
+        th Mant.
+        th Depr.
         th Total
       tr
-        td.fisicos {{i.gasoil.cantidad}} 
-        td.fisicos {{i.superficie}}
-        td.fisicos {{i.horas}}
-        td {{i.gastos_varios}}
-        td {{i.gasoil.costo}}
-        td {{i.sueldos}}
-        td {{i.sueldos}}
-        td {{}}
+        th Abs.
+        td.fisicos.left {{i.gasoil_cantidad | number:0 }} 
+        td.fisicos {{i.superficie | number:0 }}
+        td.fisicos.right {{i.horas | number:0 }}
+        td {{i.gasoil_costo | number:0 }}
+        td {{i.costo_operarios | number:0 }}
+        td {{i.gastos_varios | number:0 }}
+        td {{i.depreciacion | number:0 }}
+        td {{i.total | number:0 }}
+      tr.impar
+        th Hs.
+        td.fisicos.left {{ (i.gasoil_cantidad)/i.horas | number }} 
+        td.fisicos {{ (i.superficie)/i.horas | number }}
+        td.fisicos.right -- -- 
+        td {{ (i.gasoil_costo)/i.horas | number:2 }}
+        td {{ (i.costo_operarios)/i.horas | number:2 }}
+        td {{ (i.gastos_varios)/i.horas | number:2 }}
+        td {{ (i.depreciacion)/i.horas | number:2 }}
+        td {{ (i.total)/i.horas | number:2 }}
       tr
-        td.fisicos {{i.gasoil.cantidad}} 
-        td.fisicos {{i.superficie}}
-        td.fisicos {{i.horas}}
-        td {{i.gastos_varios}}
-        td {{i.gasoil.costo}}
-        td {{i.sueldos}}
-        td {{i.sueldos}}
-        td {{}}
+        th Ha.
+        td.fisicos.left {{ (i.gasoil_cantidad)/i.superficie | number }} 
+        td.fisicos -- --
+        td.fisicos.right {{ (i.horas)/i.superficie | number }}
+        td {{ (i.gastos_varios)/i.superficie | number:2 }}
+        td {{ (i.gasoil_costo)/i.superficie | number:2 }}
+        td {{ (i.costo_operarios)/i.superficie | number:2 }}
+        td {{ (i.depreciacion)/i.superficie | number:2 }}
+        td {{ (i.total)/i.superficie | number:2 }}
+
+      tr
+        td(colspan=9) 
+          h5 Operador/es: {{i.nombre_operarios}}

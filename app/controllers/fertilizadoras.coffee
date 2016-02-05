@@ -1,9 +1,8 @@
 angular.module 'Lm'
-.controller 'FertilizadorasCtrl', ($timeout, $rootScope, $scope, $http, Upload) ->
+.controller 'UploaderCtrl', ($location, $timeout, $rootScope, $scope, $http, Upload) ->
   ruta_rep = $rootScope.rootPath + 'reporteador'
   ruta_up = $rootScope.rootPath + 'uploader'
-
-  reporte_nombre = 'fertilizadoras'
+  reporte_nombre = $location.path().replace('/','')
   reporte = ''
   # Utiliza la directiva uploadFile
   $scope.upload = (tipo, file, reporte_attr) ->
@@ -16,9 +15,11 @@ angular.module 'Lm'
       $scope.div[tipo] = 'btn-danger'
 
   $scope.css_base = 'glyphicon upload-indicador '
-  $scope.css = {labores: 'glyphicon-minus', mantenimientos: 'glyphicon-minus', compras: 'glyphicon-minus', personas: 'glyphicon-minus'}
+  gly_ini = 'glyphicon-minus'
+  $scope.css = {labores: gly_ini, mantenimientos: gly_ini, compras: gly_ini, personas: gly_ini, depreciaciones: gly_ini}
   $scope.div_base = 'btn col-xs-2 '
-  $scope.div = {labores: 'btn-info', mantenimientos: 'btn-info', compras: 'btn-info', personas: 'btn-info'}
+  btn_ini = 'btn-info'
+  $scope.div = {labores: btn_ini, mantenimientos: btn_ini, compras: btn_ini, personas: btn_ini, depreciaciones: btn_ini}
 
   $scope.generar = () ->
     $http.get(ruta_rep + '?tipo=' + reporte_nombre).then (resp) ->

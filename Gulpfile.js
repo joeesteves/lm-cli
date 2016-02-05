@@ -35,7 +35,7 @@ gulp.task('injects', function () {
     bfiles.push('dist/vendor/' + file.match(/\/([\w,\-,\_]+\.(min.)?(?:js|css))/)[1])
   });
   var target = gulp.src('app/index.jade'),
-    sources = gulp.src(['./dist/**/*.js','!./dist/vendor/*.js','./dist/styles/*.css'], {read: false});
+    sources = gulp.src(['./dist/**/*.js','!./dist/vendor/*.js','!./dist/node_modules/**/*.js','./dist/styles/*.css'], {read: false});
   return target.pipe(inject(sources, {ignorePath: 'dist'}))
     .pipe(inject(gulp.src(bfiles, {read: false}), {name: 'bower', ignorePath: 'dist'}))
     .pipe(gulp.dest('app/'));

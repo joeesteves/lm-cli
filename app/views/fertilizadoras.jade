@@ -19,12 +19,6 @@ div
           input(type='file' file-upload='compras')
         div(ng-class='div_base + div.compras')
           span(ng-class='css_base + css.compras')
-      div
-        div(class='alert alert-info col-xs-8')
-          h4.text-center SUELDOS
-          input(type='file' file-upload='personas' reporte='todos')
-        div(ng-class='div_base + div.personas')
-          span(ng-class='css_base + css.personas')
       div(class='row' style='height:60px')
         div(class='col-xs-7')
           span.badge GASOIL COT
@@ -33,4 +27,3 @@ div
           a(class='btn btn-success btn-lg' href='#/fertilizadoras/reporte') GENERAR 
   div.row
     div(ng-repeat='(k,v) in obj' class='col-xs-6.col-xs-offset-3.central' style='height:60px')
-    |  {{k}}  --- {{v.superficie}}

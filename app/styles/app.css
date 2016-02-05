@@ -19,9 +19,20 @@
 table {
   font-size: smaller;
 }
-
+tr.impar, tr.impar > td {
+  background-color: #2E6DA4;
+  font-weight: bold;
+}
 .fisicos {
   background-color: beige;
+}
+.fisicos.left {
+  border-left: solid;
+  border-color: #ddd ;
+}
+.fisicos.right {
+  border-right: solid;
+  border-color: #ddd ;
 }
 
 .tapas {
@@ -32,27 +43,51 @@ div.footer {
   display:block;
   page-break-before:always;
 }
+tr.headers {
+  display: none;
+}
 @media print {
   div {
     float: none !important;
   }
-  .table th.fisicos,.table td.fisicos {
+  tr.headers {
+    display: table-row;
+  }
+
+  .table th.fisicos, .table td.fisicos {
     background-color: beige !important;
-}
+  }
+  .table th.fisicos.left, .table td.fisicos.left {
+    border-left: solid !important;
+    border-color: #ddd !important;
+  }
+  .table th.fisicos.right, .table td.fisicos.right, .table tr.impar > th {
+    border-right: solid !important;
+    border-color: #ddd !important;
+  }
+  .table tr.impar, .table tr.impar > td, .table tr.impar > th {
+    background-color: #2E6DA4 !important;
+    font-weight: bold !important;
+  }
+
   .table-div {
     position: relative;
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
     }
+
   div .panel-heading {
-    font-size: smaller;
+    display: none;
   }
+
   .tapas {
     display: block;
-    width: 1050px;
+    width: 1050px !important;
   }
+
   .separador {
-    height: 150px;
+    height: 150px !important;
   }
+
   div.footer {
     page-break-after:always !important;
   }

@@ -5,7 +5,13 @@ angular.module 'Lm'
 		templateUrl: '/views/main_nav.html'
 	.when '/fertilizadoras',
 		templateUrl: '/views/fertilizadoras.html'
-		controller: 'FertilizadorasCtrl'
+		controller: 'UploaderCtrl'
 	.when '/fertilizadoras/reporte',
 		templateUrl: '/views/fertilizadoras_reporte.html'
 		controller: 'FertilizadorasReporteCtrl'
+	.when '/depreciaciones',
+		templateUrl: '/views/depreciaciones.html'
+		controller: 'UploaderCtrl'
+	.when '/sueldos',
+		templateUrl: '/views/personas.html'
+		controller: 'UploaderCtrl'
