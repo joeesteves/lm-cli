@@ -1,0 +1,131 @@
+.titulo {
+  padding-left: 150px;
+  padding-right: 150px;
+  }
+.indice {
+  display: none;
+  }
+
+.logo {
+  float: right;
+  height: 70px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.central {
+  margin-top: 50px;
+  padding: 5px;
+  background-color: rgb(86, 143, 109);
+  border-radius: 10px;
+}
+.btn-reports {
+  width: 30%;
+  margin: 5px;
+  border-radius: 10px;
+}
+.iconos {
+  width:150px;
+}
+.upload-indicador{
+  font-size: large;
+}
+table {
+  font-size: smaller;
+}
+tr.impar > td {
+  background-color: #2E6DA4;
+  font-weight: bold;
+}
+.fisicos {
+  background-color: beige;
+  .left {
+    border-left: solid;
+    border-color: #ddd ;
+  }
+    .right {
+      border-right: solid;
+      border-color: #ddd ;
+    }
+  }
+
+.tapas {
+  display: none;
+  width: 800px;
+}
+div.footer {
+  display:block;
+  page-break-before:always;
+}
+tr.headers {
+  display: none;
+}
+
+@media print {
+  div {
+    float: none !important;
+    .panel-heading {
+      display: none;
+    }
+    .footer {
+      page-break-after:always !important;
+    }
+  }
+
+  tr.headers {
+    display: table-row;
+    td {
+      background-color: #ddd !important;
+    }
+    h4 {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+  }
+
+  td > h5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .table {
+    td.esquina {
+      background-color: #dff0d8 !important;
+    }
+    th.fisicos, td.fisicos {
+      background-color: beige !important;
+    }
+    th.fisicos.left, td.fisicos.left {
+      border-left: solid !important;
+      border-color: #ddd !important;
+    }
+    th.fisicos.right, td.fisicos.right, tr.impar > th {
+      border-right: solid !important;
+      border-color: #ddd !important;
+    }
+    tr.impar, tr.impar > td, tr.impar > th {
+      background-color: #2E6DA4 !important;
+      font-weight: bold !important;
+    }
+
+  }
+
+  .table-div {
+    position: relative;
+    page-break-inside: avoid !important;
+  }
+
+  .tapas {
+    display: block;
+    width: 1050px !important;
+  }
+
+  .separador {
+    height: 150px !important;
+  }
+
+  .logo {
+    height: 50px;
+    margin-top: 0px;
+  }
+}

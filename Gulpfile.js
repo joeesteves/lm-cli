@@ -2,6 +2,7 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   coffee = require('gulp-coffee'),
   jade = require('gulp-jade'),
+  sass = require('gulp-sass'),
   inject = require('gulp-inject'),
   bowerFiles = require('main-bower-files'),
   webserver = require('gulp-webserver'),
@@ -22,6 +23,13 @@ gulp.task('css', function() {
   gulp.src('app/styles/*.css')
   .pipe(gulp.dest('dist/styles'))
 });
+
+gulp.task('sass', function() {
+  gulp.src('app/styles/*.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest('dist/styles'))
+});
+
 
 gulp.task('vendor', function() {
   gulp.src(bowerFiles())
@@ -67,10 +75,12 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('default',['coffee', 'css', 'vendor', 'injects', 'jade', 'webserver'], function() {
+gulp.task('default',['coffee', 'css', 'sass', 'vendor', 'injects', 'jade', 'webserver'], function() {
   gulp.watch('app/**/*.coffee', ['coffee', 'vendor', 'injects', 'jade']);
   gulp.watch('app/**/*.jade', ['jade']);
-  gulp.watch('app/**/*.css', ['css'])
+  gulp.watch('app/**/*.css', ['css']);
+  gulp.watch('app/**/*.scss', ['sass']);
+
 })
 
 

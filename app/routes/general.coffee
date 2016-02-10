@@ -6,7 +6,7 @@ angular.module 'Lm'
 	.when '/fertilizadoras',
 		templateUrl: '/views/fertilizadoras.html'
 		controller: 'UploaderCtrl'
-	.when '/fertilizadoras/reporte',
+	.when '/reporte/:tipo/:precio_gasoil',
 		templateUrl: '/views/fertilizadoras_reporte.html'
 		controller: 'FertilizadorasReporteCtrl'
 	.when '/depreciaciones',

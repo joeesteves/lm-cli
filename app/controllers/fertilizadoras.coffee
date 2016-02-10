@@ -4,6 +4,7 @@ angular.module 'Lm'
   ruta_up = $rootScope.rootPath + 'uploader'
   reporte_nombre = $location.path().replace('/','')
   reporte = ''
+  $scope.precio_gasoil = 1
   # Utiliza la directiva uploadFile
   $scope.upload = (tipo, file, reporte_attr) ->
     reporte = reporte_attr || reporte_nombre
@@ -21,10 +22,10 @@ angular.module 'Lm'
   btn_ini = 'btn-info'
   $scope.div = {labores: btn_ini, mantenimientos: btn_ini, compras: btn_ini, personas: btn_ini, depreciaciones: btn_ini}
 
-  $scope.generar = () ->
-    $http.get(ruta_rep + '?tipo=' + reporte_nombre).then (resp) ->
-      $scope.obj = resp.data
-      console.log(resp)
+  # $scope.generar = () ->
+  #   $http.get(ruta_rep + '?tipo=' + reporte_nombre).then (resp) ->
+  #     $scope.obj = resp.data
+  #     console.log(resp)
 
   $scope.check_status = (tipo) ->
     # console.log tipo

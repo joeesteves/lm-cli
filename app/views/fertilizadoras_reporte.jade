@@ -1,11 +1,23 @@
 div.col-xs-10.col-xs-offset-1
-  h2.text-center FERTILIZADORAS
-  h4.text-center (01/07/2014 al 30/06/2015)
+  img(class='logo' src='/images/logo.png')
+  h2.text-center.titulo FERTILIZADORAS
+  h4.text-center.titulo (01/07/2014 al 30/06/2015)
   br
-  img(class='tapas' src='/images/fert_tapa.png')
+  img(class='tapas' src='/images/tapas/fert2.png')
   div.separador
-  img(class='tapas' src='/images/fert_tapa2.png')
+  img(class='tapas' src='/images/tapas/fert.png')
   div.footer
+  div.indice
+    h4.text-center.titulo Indice
+    div.separador
+      ul
+        li Resumen
+        li Detalle Labores
+        li Detalle Mantenimiento
+        li Detalle ---
+  
+  div.footer
+  h4.text-center.titulo Resumen
   div(class='table-div panel panel-default' ng-repeat='i in obj')
     div(class='panel-heading text-center')  {{i.nombre}}
     table.table
@@ -13,7 +25,7 @@ div.col-xs-10.col-xs-offset-1
         td(colspan=9) 
           h4.text-center {{i.nombre}}
       tr
-        td(rowspan=2)
+        td(class='esquina' rowspan=2)
         td(class='fisicos left right' colspan=3)
           h5 Fisicos
         td(colspan=5) 
@@ -61,3 +73,15 @@ div.col-xs-10.col-xs-offset-1
       tr
         td(colspan=9) 
           h5 Operador/es: {{i.nombre_operarios}}
+
+  div.footer
+  h4.text-center.titulo Detalle Labores
+    detalle(tipo="mantenimientos" reporte="fertilizadoras")
+  div.footer
+  h4.text-center.titulo Detalle Mantenimiento (Consumos)
+  
+  div.footer
+  h4.text-center.titulo Detalle Mantenimiento (Compras Directas)
+  
+  div.footer
+  h4.text-center.titulo Detalle ...

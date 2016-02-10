@@ -1,0 +1,11 @@
+div(class='panel panel-default')
+  div(class='panel-heading text-center') 
+    table
+      tr
+        th Maquina
+        
+      tr(ng-repeat='item in coleccion')
+        td {{item.maquina}}
+        td {{item.insumo}}
+        td {{item.cantidad}}
+        td {{item.costoestandar}}
