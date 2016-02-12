@@ -10,7 +10,17 @@ var gulp = require('gulp'),
   del = require('del')
 
 gulp.task('clean', function(){
-  return del(['dist/*','!dist/images']);
+  return del(['dist/*']);
+});
+
+gulp.task('images', function(){
+  gulp.src('app/images/**/*')
+  .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('fonts', function(){
+  gulp.src('app/fonts/**/*')
+  .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('coffee', function() {
@@ -75,7 +85,7 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('default',['coffee', 'css', 'sass', 'vendor', 'injects', 'jade', 'webserver'], function() {
+gulp.task('default',['coffee', 'css', 'sass', 'images', 'fonts', 'vendor', 'injects', 'jade', 'webserver'], function() {
   gulp.watch('app/**/*.coffee', ['coffee', 'vendor', 'injects', 'jade']);
   gulp.watch('app/**/*.jade', ['jade']);
   gulp.watch('app/**/*.css', ['css']);
