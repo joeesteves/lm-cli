@@ -1,3 +1,7 @@
+@font-face {
+  font-family: jules;
+  src: url(/fonts/Quicksand-Regular.ttf);
+}
 .titulo {
   padding-left: 150px;
   padding-right: 150px;
@@ -5,7 +9,25 @@
 .indice {
   display: none;
   }
+.logo_menu {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.btn_principal {
+  width: 20%;
+}
+.btn_principal:hover {
+  opacity: 0.8;
+}
 
+.leyenda {
+  font-family: jules;
+  float:right;
+  color: #00963f;
+  font-size: 20px;
+  font-weight: 600;
+
+}
 .logo {
   float: right;
   height: 70px;
@@ -23,9 +45,11 @@
   margin: 5px;
   border-radius: 10px;
 }
-.iconos {
-  width:150px;
+hr.linea {
+  border: 5px solid #00963f;
+  color: red;
 }
+
 .upload-indicador{
   font-size: large;
 }
@@ -34,6 +58,7 @@ table {
 }
 tr.impar > td {
   background-color: #2E6DA4;
+  color: white;
   font-weight: bold;
 }
 .fisicos {
@@ -61,6 +86,18 @@ tr.headers {
 }
 
 @media print {
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9 !important;
+  }
+  .table-hover > tbody > tr:hover {
+    background-color: #f5f5f5 !important;
+  }
+
+  table.detalle {
+    margin-left: -50px !important;
+    width: 120% !important;
+  }
   div {
     float: none !important;
     .panel-heading {
@@ -105,6 +142,7 @@ tr.headers {
     }
     tr.impar, tr.impar > td, tr.impar > th {
       background-color: #2E6DA4 !important;
+      color: white !important;
       font-weight: bold !important;
     }
 
@@ -112,6 +150,9 @@ tr.headers {
 
   .table-div {
     position: relative;
+    page-break-inside: avoid !important;
+  }
+  tr {
     page-break-inside: avoid !important;
   }
 

@@ -14,15 +14,18 @@ html(ng-app='Lm')
     script(src="/vendor/jquery.js")
     script(src="/vendor/angular-route.js")
     //- endinject
+    
+    // Manualy added
+    script(src="/vendor/bootstrap.min.js")
+    
     //- inject:js
     script(src="/main.js")
     script(src="/controllers/fertilizadoras.js")
     script(src="/controllers/fertilizadoras_reporte.js")
-    script(src="/controllers/labores.js")
     script(src="/directives/detalle.js")
-    script(src="/directives/labores.js")
     script(src="/directives/upload.js")
     script(src="/routes/general.js")
     script(src="/services/upload.js")
     //- endinject
+    
     ng-view
