@@ -72,6 +72,7 @@ gulp.task('jade', function () {
 gulp.task('webserver', function() {
   gulp.src('dist')
     .pipe(webserver({
+      host: '0.0.0.0',
       livereload: true,
       directoryListing: false,
       open: true,
@@ -94,7 +95,7 @@ gulp.task('default',['coffee', 'css', 'sass', 'images', 'fonts', 'vendor', 'manu
   gulp.watch('app/**/*.jade', ['jade']);
   gulp.watch('app/**/*.css', ['css']);
   gulp.watch('app/**/*.scss', ['sass']);
-  gulp.watch('app/images/**/*', ['images']);  
+  gulp.watch('app/images/**/*', ['images']);
 })
 
 
