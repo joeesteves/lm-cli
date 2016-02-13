@@ -2,20 +2,32 @@
   font-family: jules;
   src: url(/fonts/Quicksand-Regular.ttf);
 }
+
 .titulo {
+  font-size: 80px;
+  font-family: jules;
+  font-weight: 900;
   padding-left: 150px;
   padding-right: 150px;
   }
+.sub_titulo {
+  padding-left: 150px;
+  padding-right: 150px;
+
+}
 .indice {
   display: none;
   }
+
 .logo_menu {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 .btn_principal {
   width: 20%;
 }
+
 .btn_principal:hover {
   opacity: 0.8;
 }
@@ -29,10 +41,9 @@
 
 }
 .logo {
-  float: right;
-  height: 70px;
+  height: 120px;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .central {
   margin-top: 50px;
