@@ -1,29 +1,34 @@
-div
-  div.row
-    form.col-xs-6.col-xs-offset-3.central
+div.col-xs-10.col-xs-offset-1
+  img(class="menu_logo" src="/images/logo.png")
+  center
+    hr.linea
+    div.upload
+      div.odd
+        img(src='images/iconos/upload/labores.png')
+        p LABORES
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='labores')
+      div.even
+        img(src='images/iconos/upload/mantenimientos.png')
+        p MANTENIMIENTO
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='mantenimientos')
+      div.odd
+        img(src='images/iconos/upload/compras.png')
+        P COMPRAS
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='compras')
       div
-        div(class='col-xs-8 alert alert-info')
-          h4.text-center LABORES
-          input(type='file' file-upload='labores')
-        div(ng-class='div_base + div.labores')
-          span(ng-class='css_base + css.labores')
-      div
-        div(class='alert alert-info col-xs-8')
-          h4.text-center MANTENIMIENTO
-          input(type='file' file-upload='mantenimientos')
-        div(ng-class='div_base + div.mantenimientos')
-          span(ng-class='css_base + css.mantenimientos')
-      div
-        div(class='alert alert-info col-xs-8')
-          h4.text-center COMPRAS
-          input(type='file' file-upload='compras')
-        div(ng-class='div_base + div.compras')
-          span(ng-class='css_base + css.compras')
-      div(class='row' style='height:60px')
-        div(class='col-xs-7')
-          span.badge GASOIL COT
-          input(type='text' ng-model='precio_gasoil' style="height:60%")
-        div(class='col-xs-5')
-          a(class='btn btn-success btn-lg' href="#/reporte/fertilizadoras/{{precio_gasoil}}" ) GENERAR
-  div.row
-    div(ng-repeat='(k,v) in obj' class='col-xs-6.col-xs-offset-3.central' style='height:60px')
+        img(src='images/iconos/upload/gasoil.png')
+        p(style='color:black') GASOIL
+        img(class='barra' src='images/iconos/upload/barra_negra.png')
+        input(class='input_gasoil' type='text' ng-model='precio_gasoil')
+        a(class='btn' href="#/reporte/fertilizadoras/{{precio_gasoil}}" ) GENERAR
+  hr.linea
+  span.leyenda COMPROMETIDOS AL CRECIMIENTO JUNTOS.

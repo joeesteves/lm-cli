@@ -7,8 +7,7 @@ table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquin
     th(style="width:5%")  Lab
     th(style="width:30%") Est - Lote
     th(style="width:5%")  Sup
-    th(style="width:50%") Desc
-    
+    th(style="width:50%") Desc    
   tr(ng-repeat='item in maquina.detalle')
     td {{item.fecha |  date : 'dd-M-yy'}}
     td(title='{{item.doc}}' data-container='body') {{item.doc.split(" - ")[1] }}

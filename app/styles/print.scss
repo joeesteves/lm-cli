@@ -1,0 +1,119 @@
+@media print {
+  hr.frame {
+    display: block;
+    margin-top: 0px;
+    border: 10px solid #00963f;
+  }
+  .tapa {
+    margin-top: 200px !important;
+  }
+  .logo {
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  hr.linea {
+    border-width: 2px;
+  }
+  .titulo {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 25px !important;
+  }
+  .cinta {
+    margin-top: 300px !important;
+  }
+  footer {
+    background-color: red;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9 !important;
+  }
+  .table-hover > tbody > tr:hover {
+    background-color: #f5f5f5 !important;
+  }
+
+  table.detalle {
+    margin-left: -50px !important;
+    width: 120% !important;
+  }
+
+  div {
+    float: none !important;
+    .panel-heading {
+      display: none;
+    }
+    .footer {
+      page-break-after:always !important;
+    }
+  }
+
+  tr.headers {
+    display: table-row;
+    td {
+      background-color: #ddd !important;
+    }
+    h4 {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+  }
+
+  td > h5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .table {
+    td.esquina {
+      background-color: #dff0d8 !important;
+    }
+    th.fisicos, td.fisicos {
+      background-color: beige !important;
+    }
+    th.fisicos.left, td.fisicos.left {
+      border-left: solid !important;
+      border-color: #ddd !important;
+    }
+    th.fisicos.right, td.fisicos.right, tr.impar > th {
+      border-right: solid !important;
+      border-color: #ddd !important;
+    }
+    tr.impar, tr.impar > td, tr.impar > th {
+      background-color: #2E6DA4 !important;
+      color: white !important;
+      font-weight: bold !important;
+    }
+
+  }
+
+  .table-div {
+    position: relative;
+    page-break-inside: avoid !important;
+  }
+  table {
+    page-break-inside:auto;
+  }
+  tr {
+    page-break-inside:avoid;
+    page-break-after:auto;
+  }
+
+  .tapas {
+    display: block;
+    width: 1050px !important;
+  }
+
+  .separador {
+    height: 150px !important;
+  }
+}
+@page{
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+margin-bottom: 20px;
+}

@@ -45,6 +45,10 @@ gulp.task('vendor', function() {
   gulp.src(bowerFiles())
   .pipe(gulp.dest('dist/vendor/'));
 });
+gulp.task('manual_vendor',function(){
+  gulp.src('app/vendor/*')
+  .pipe(gulp.dest('dist/vendor/'));
+});
 
 
 gulp.task('injects', function () {
@@ -85,12 +89,12 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('default',['coffee', 'css', 'sass', 'images', 'fonts', 'vendor', 'injects', 'jade', 'webserver'], function() {
+gulp.task('default',['coffee', 'css', 'sass', 'images', 'fonts', 'vendor', 'manual_vendor', 'injects', 'jade', 'webserver'], function() {
   gulp.watch('app/**/*.coffee', ['coffee', 'vendor', 'injects', 'jade']);
   gulp.watch('app/**/*.jade', ['jade']);
   gulp.watch('app/**/*.css', ['css']);
   gulp.watch('app/**/*.scss', ['sass']);
-
+  gulp.watch('app/images/**/*', ['images']);  
 })
 
 
