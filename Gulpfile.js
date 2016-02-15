@@ -10,7 +10,7 @@ var gulp = require('gulp'),
   del = require('del')
 
 gulp.task('clean', function(){
-  return del(['dist/*']);
+  return del(['dist/*','!dist/package.json', '!dist/node_modules']);
 });
 
 gulp.task('images', function(){

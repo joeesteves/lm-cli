@@ -1,0 +1,14 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+  	"start": "http-server -p $PORT"
+  	},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
+}

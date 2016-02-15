@@ -1,0 +1,22 @@
+table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquina in compras' style="width:100%")
+  tr
+    th(colspan=6 class='text-center')
+      h4 {{maquina.maquina}}
+  tr
+    th(style="width:10%")  Fecha
+    th(style="width:5%") Comprobante
+    th(style="width:35%") Insumo
+    th(style="width:5%")  Prov.
+    th(style="width:5%")  Costo 
+    th(style="width:30%") Desc.
+  tr(ng-repeat='item in maquina.detalle')  
+    td {{item.fecha |  date : 'dd-M-yy'}}
+    td {{item.comprobante}}
+    td(ng-if='item.insumo.length <= 25') {{item.insumo}}
+    td(ng-if='item.insumo.length > 25'  title='{{item.insumo}}' data-container='body') {{item.insumo | limitTo: 25}} ...
+    td {{item.proveedor}}
+    td {{item.valor}}
+    td {{item.obs}}
+  tr
+    th(colspan=6 style="background-color:#337AB7; height:10px")
+    

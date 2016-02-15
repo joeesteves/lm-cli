@@ -5,7 +5,11 @@ angular.module 'Lm'
   # templateUrl: 'views/detalle/labores.html'
   link: (scope, e, attr) ->
     ruta = $rootScope.rootPath + attr.tipo
-    $http.get(ruta+'?reporte='+attr.reporte)
+    solo_gasoil = false
+    if attr.tipo == 'gasoil'
+      solo_gasoil = 1
+      ruta = $rootScope.rootPath + 'mantenimientos'
+    $http.get(ruta+'?reporte='+attr.reporte+'&solo_gasoil='+solo_gasoil)
     .then (resp) ->
       scope[attr.tipo] = resp.data
     $timeout(

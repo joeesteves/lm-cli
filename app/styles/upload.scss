@@ -1,10 +1,21 @@
 .odd {
   background-color: #8AB648;
+  .upload_ok{
+    color: #00963f;
+  }
 }
 .even {
   background-color: #00963f;
+  .upload_ok{
+    color: #8AB648;
+  }
 }
-
+.upload_error, .upload_ok {
+  float: right;
+  font-size: 20;
+  margin-top: 15;
+  margin-right: 50;
+}
 .upload {
   input.input_gasoil {
     display: block;
@@ -34,6 +45,12 @@
   img {
     height: 100%;
     float: left;
+    &.loading {
+      float:right;
+      height: 30;
+      margin-top: 10;
+      margin-right: 40;
+    }
     &.barra {
       margin-left: 10;
       margin-top: 5;
