@@ -55,7 +55,7 @@
   }
 
   tr.headers {
-    display: table-row;
+    display: table-row !important;
     td {
       background-color: #ddd !important;
     }
