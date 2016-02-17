@@ -1,20 +1,23 @@
-table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquina in gasoil' style="width:100%")
-  tr
-    th(colspan=6 class='text-center')
-      h4 {{maquina.maquina}}
-  tr
-    th(style="width:10%")  Fecha
-    th(style="width:5%")   Parte
-    th(style="width:5%")   Cant.
-    th(style="width:5%")   Importe
-    th(style="width:50%")  Desc.
-  tr(ng-repeat='item in maquina.detalle')  
-    td
-      div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
-    td {{item.doc.replace('PARMAN -','')}}
-    td {{item.insumos[0].cantidad}}
-    td {{item.insumos[0].cantidad * precio_gasoil}}
-    td {{item.obs}}
-  tr
-    th(colspan=6 style="background-color:#337AB7; height:10px")
-    
+center
+  table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquina in gasoil' style='width:70%')
+    tr
+      th(colspan=6 class='text-center')
+        h4 {{maquina.maquina}}
+    tr
+      th(style="width:5%")  Fecha
+      th(style="width:5%")   Parte
+      th(style="width:5%")   Hor
+      th(style="width:5%")   Cant.
+      th(style="width:5%")   Importe
+      th(style="width:15%")  Desc.
+    tr(ng-repeat='item in maquina.detalle')  
+      td
+        div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
+      td.text-center {{ item.doc.replace('PARMAN -','') }}
+      td.text-center {{ item.horometro }}    
+      td {{ item.insumos[0].cantidad }}
+      td {{ item.insumos[0].cantidad * precio_gasoil | number:2 }}
+      td {{ item.obs}}
+    tr
+      th(colspan=6 style="background-color:#337AB7; height:10px")
+      

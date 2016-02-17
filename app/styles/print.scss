@@ -24,9 +24,6 @@
   .cinta {
     margin-top: 300px !important;
   }
-  footer {
-    background-color: red;
-  }
 
   .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9 !important;
@@ -92,16 +89,7 @@
 
   .table-div {
     position: relative;
-    page-break-inside: avoid !important;
   }
-  table {
-    page-break-inside:auto;
-  }
-  tr {
-    page-break-inside:avoid;
-    page-break-after:auto;
-  }
-
   .tapas {
     display: block;
     width: 1050px !important;
@@ -110,10 +98,16 @@
   .separador {
     height: 150px !important;
   }
+
+  // .break {
+  //   display: table-row;
+  //   page-break-inside:avoid !important;
+  // }
 }
+
 @page{
-margin-left: 0px;
-margin-right: 0px;
-margin-top: 0px;
-margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
