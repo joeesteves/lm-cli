@@ -1,22 +1,34 @@
-table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquina in mantenimientos' style="width:100%")
+table(class='detalle table-bordered' ng-repeat='maquina in mantenimientos' style="width:100%")
   tr
-    th(colspan=6 class='text-center')
+    th(colspan=7 class='text-center')
       h4 {{maquina.maquina}}
   tr
-    th(style="width:10%")  Fecha
-    th(style="width:5%") Parte
+    th(style="width:7%") Fecha
+    th(style="width:5%")  Parte
+    th(style="width:5%")  Hor.
     th(style="width:35%") Insumo
-    th(style="width:5%")  Cant.
-    th(style="width:5%")  Costo 
-    th(style="width:30%") Desc.
-  tr(ng-repeat='item in maquina.detalle')  
-    td {{item.fecha |  date : 'dd-M-yy'}}
-    td {{item.doc.replace('PARMAN -','')}}
-    td(ng-if='item.insumo.length <= 25') {{item.insumo}}
-    td(ng-if='item.insumo.length > 25'  title='{{item.insumo}}' data-container='body') {{item.insumo | limitTo: 25}} ...
-    td {{item.cantidad}}
-    td {{item.costoestandar}}
-    td {{item.obs}}
-  tr
-    th(colspan=6 style="background-color:#337AB7; height:10px")
+    th(style="width:2%")  Cant.
+    th(style="width:3%")  Costo 
+    th(style="width:43%") Desc.
+  tbody(ng-class-odd="'tr_odd'" ng-repeat='item in maquina.detalle')
+    tr
+      td(rowspan='{{item.insumos.length}}') 
+        div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
+      td(class='text-center' rowspan='{{item.insumos.length}}') {{item.doc.replace('PARMAN -','')}}
+      td(rowspan='{{item.insumos.length}}') {{ item.horometro | number:0 }}
+      td {{ item.insumos[0].nombre }}
+      td.text-center {{ item.insumos[0].cantidad }}
+      td.text-center {{ item.insumos[0].costo }}
+      td(class='observaciones' rowspan='{{item.insumos.length}}') {{item.obs}}
+    tr(ng-repeat='insumo in item.insumos' ng-if="$index >= 1" )  
+      td {{insumo.nombre}}
+      td.text-center {{insumo.cantidad}}
+      td.text-center {{insumo.costo}}
+      
+    //- td(ng-if='insumo.nombre.length <= 25') {{insumo.nombre}}
+    //- td(ng-if='insumo.nombre.length > 25'  title='{{insumo.nombre}}' data-container='body') {{insumo.nombre | limitTo: 25}} ...
+    //- td {{insumo.cantidad}}
+    //- td {{insumo.costoestandar}}
+  //- tr
+  //-   th(colspan=4 style="background-color:#337AB7; height:10px")
     

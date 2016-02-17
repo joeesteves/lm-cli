@@ -21,7 +21,7 @@
     display: block;
     float: left;
     height: 40;
-    width: 350;
+    width: 31%;
     margin-left: 70;
     margin-top: 3;
     text-align: center;
@@ -67,14 +67,14 @@ a.btn{
   height: 40px;
   margin-top: 2;
   margin-right: 0;
-  width: 200;
+  width: 18%;
 }
 .divFileUpload {
     cursor: pointer;
     position: absolute;
     overflow: hidden;
     &.btn {
-      width: 350;
+      width: 30%;
       display: block;
       margin-left: 400;
       height: 40px;

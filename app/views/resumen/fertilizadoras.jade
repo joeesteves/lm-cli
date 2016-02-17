@@ -31,24 +31,24 @@ div(class='table-div panel panel-default' ng-repeat='i in obj')
       td {{i.total | number:0 }}
     tr.impar
       th Hs.
-      td.fisicos.left {{ (i.gasoil_cantidad)/i.horas | number }} 
-      td.fisicos {{ (i.superficie)/i.horas | number }}
+      td.fisicos.left {{ (i.gasoil_cantidad)/i.horas | number:1 }} 
+      td.fisicos {{ (i.superficie)/i.horas | number:1 }}
       td.fisicos.right -- -- 
-      td {{ (i.gasoil_costo)/i.horas | number:2 }}
-      td {{ (i.costo_operarios)/i.horas | number:2 }}
-      td {{ (i.gastos_varios)/i.horas | number:2 }}
-      td {{ (i.depreciacion)/i.horas | number:2 }}
-      td {{ (i.total)/i.horas | number:2 }}
+      td {{ (i.gasoil_costo)/i.horas | number:1 }}
+      td {{ (i.costo_operarios)/i.horas | number:1 }}
+      td {{ (i.gastos_varios)/i.horas | number:1 }}
+      td {{ (i.depreciacion)/i.horas | number:1 }}
+      td {{ (i.total)/i.horas | number:1 }}
     tr
       th Ha.
-      td.fisicos.left {{ (i.gasoil_cantidad)/i.superficie | number }} 
+      td.fisicos.left {{ (i.gasoil_cantidad)/i.superficie | number:1 }} 
       td.fisicos -- --
-      td.fisicos.right {{ (i.horas)/i.superficie | number }}
-      td {{ (i.gastos_varios)/i.superficie | number:2 }}
-      td {{ (i.gasoil_costo)/i.superficie | number:2 }}
-      td {{ (i.costo_operarios)/i.superficie | number:2 }}
-      td {{ (i.depreciacion)/i.superficie | number:2 }}
-      td {{ (i.total)/i.superficie | number:2 }}
+      td.fisicos.right {{ (i.horas)/i.superficie | number:1 }}
+      td {{ (i.gastos_varios)/i.superficie | number:1 }}
+      td {{ (i.gasoil_costo)/i.superficie | number:1 }}
+      td {{ (i.costo_operarios)/i.superficie | number:1 }}
+      td {{ (i.depreciacion)/i.superficie | number:1 }}
+      td {{ (i.total)/i.superficie | number:1 }}
 
     tr
       td(colspan=9) 

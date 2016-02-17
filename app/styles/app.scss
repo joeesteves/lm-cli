@@ -5,23 +5,19 @@
 body {
   font-family: jules !important;
 }
-
 .titulo {
   font-size: 80px;
 }
-
 .menu_logo {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 .menu_btns {
   width: 20%;
   &:hover {
     opacity: 0.8;
   }
 }
-
 .leyenda {
   font-family: jules;
   float:right;
@@ -29,13 +25,11 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-
 .logo {
   height: 120px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 hr.linea {
   border: 4px solid #00963f;
 }
@@ -52,34 +46,6 @@ hr.frame {
 .upload-indicador{
   font-size: large;
 }
-
 .cinta {
   width: 100%;
-}
-table {
-  font-size: smaller;
-}
-tr.impar > td {
-  background-color: #2E6DA4;
-  color: white;
-  font-weight: bold;
-}
-.fisicos {
-  background-color: beige;
-  .left {
-    border-left: solid;
-    border-color: #ddd ;
-  }
-    .right {
-      border-right: solid;
-      border-color: #ddd ;
-    }
-  }
-
-div.footer {
-  display:block;
-  page-break-before:always;
-}
-tr.headers {
-  display: none;
 }

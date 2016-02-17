@@ -5,17 +5,15 @@ table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquin
   tr
     th(style="width:10%")  Fecha
     th(style="width:5%")   Parte
-    th(style="width:15%")  Insumo
     th(style="width:5%")   Cant.
-    th(style="width:5%")   Costo 
+    th(style="width:5%")   Importe
     th(style="width:50%")  Desc.
   tr(ng-repeat='item in maquina.detalle')  
-    td {{item.fecha |  date : 'dd-M-yy'}}
+    td
+      div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
     td {{item.doc.replace('PARMAN -','')}}
-    td(ng-if='item.insumo.length <= 25') {{item.insumo}}
-    td(ng-if='item.insumo.length > 25'  title='{{item.insumo}}' data-container='body') {{item.insumo | limitTo: 25}} ...
-    td {{item.cantidad}}
-    td {{item.costoestandar}}
+    td {{item.insumos[0].cantidad}}
+    td {{item.insumos[0].cantidad * precio_gasoil}}
     td {{item.obs}}
   tr
     th(colspan=6 style="background-color:#337AB7; height:10px")

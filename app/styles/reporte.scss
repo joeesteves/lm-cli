@@ -1,0 +1,48 @@
+table {
+  font-size: smaller;
+}
+.tr_odd {
+  background-color: #2E6DA4;
+  td {
+    color: white;
+  }
+}
+div.fecha {
+  width: 55px;
+  text-align: right;
+}
+.observaciones {
+  padding-left: 10;
+}
+th {
+  padding: 5 !important;
+}
+td {
+  padding-left: 5 !important;
+  padding-top: 2 !important;
+  padding-bottom: 2 !important;
+}
+
+tr.impar > td {
+  background-color: #2E6DA4;
+  color: white;
+  font-weight: bold;
+}
+.fisicos {
+  background-color: beige;
+  .left {
+    border-left: solid;
+    border-color: #ddd ;
+  }
+    .right {
+      border-right: solid;
+      border-color: #ddd ;
+    }
+}
+div.footer {
+  display:block;
+  page-break-before:always;
+}
+tr.headers {
+  display: none;
+}
