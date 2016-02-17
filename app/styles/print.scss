@@ -24,7 +24,12 @@
   .cinta {
     margin-top: 300px !important;
   }
-
+  .tr_odd {
+    background-color: #2E6DA4 !important;
+    td {
+      color: white !important;
+    }
+  }
   .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9 !important;
   }
