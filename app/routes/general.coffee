@@ -1,17 +1,13 @@
 angular.module 'Lm'
 .config ($routeProvider) ->
-	$routeProvider
+  $routeProvider
   .when '/',
-		templateUrl: '/views/main_nav.html'
-	.when '/fertilizadoras',
-		templateUrl: '/views/fertilizadoras.html'
-		controller: 'UploaderCtrl'
-	.when '/reporte/:tipo/:precio_gasoil',
-		templateUrl: '/views/fertilizadoras_reporte.html'
-		controller: 'FertilizadorasReporteCtrl'
-	.when '/depreciaciones',
-		templateUrl: '/views/depreciaciones.html'
-		controller: 'UploaderCtrl'
-	.when '/sueldos',
-		templateUrl: '/views/personas.html'
-		controller: 'UploaderCtrl'
+    templateUrl: '/views/main_nav.html'
+  .when '/reporte/:tipo/:precio_gasoil',
+    controller: 'FertilizadorasReporteCtrl'
+    templateUrl: ($routeParams) ->
+      '/views/' + $routeParams.tipo + '_reporte.html'
+  .when '/:tipo',
+    controller: 'UploaderCtrl'
+    templateUrl: ($routeParams) ->
+      '/views/' + $routeParams.tipo + '.html'

@@ -1,0 +1,44 @@
+div.col-xs-10.col-xs-offset-1
+  a(href='#/')
+    img(class="menu_logo" src="/images/logo.png")
+  center
+    hr.linea
+    div.upload
+      div.odd
+        img(src='images/iconos/upload/labores.png')
+        p LABORES
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='labores')
+        img(class='loading' src='images/iconos/upload/loading.gif' ng-hide='estado_upload.labores != "loading"')
+        span(class='glyphicon glyphicon-remove upload_error text-warning' ng-hide='estado_upload.labores != "error"')
+        span(class='glyphicon glyphicon-ok upload_ok' ng-hide='estado_upload.labores != "terminado"')
+      div.even
+        img(src='images/iconos/upload/mantenimientos.png')
+        p MANTENIMIENTO
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='mantenimientos')
+        img(class='loading' src='images/iconos/upload/loading.gif' ng-hide='estado_upload.mantenimientos != "loading"')
+        span(class='glyphicon glyphicon-remove upload_error text-warning' ng-hide='estado_upload.mantenimientos != "error"')
+        span(class='glyphicon glyphicon-ok upload_ok' ng-hide='estado_upload.mantenimientos != "terminado"')
+      div.odd
+        img(src='images/iconos/upload/compras.png')
+        P COMPRAS
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        div(class='divFileUpload btn')
+          span Seleccione el archivo
+          input(class='inputUpload' type='file' file-upload='compras')
+        img(class='loading' src='images/iconos/upload/loading.gif' ng-hide='estado_upload.compras != "loading"')
+        span(class='glyphicon glyphicon-remove upload_error text-warning' ng-hide='estado_upload.compras != "error"')
+        span(class='glyphicon glyphicon-ok upload_ok' ng-hide='estado_upload.compras != "terminado"')
+      div
+        img(src='images/iconos/upload/gasoil.png')
+        p(style='color:black') GASOIL
+        img(class='barra' src='images/iconos/upload/barra_negra.png')
+        input(class='input_gasoil' type='text' ng-model='precio_gasoil')
+        a(class='btn' href="#/reporte/fumigadoras/{{precio_gasoil}}" ) GENERAR
+  hr.linea
+  span.leyenda COMPROMETIDOS AL CRECIMIENTO JUNTOS.
