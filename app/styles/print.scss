@@ -43,7 +43,9 @@
     margin-left: -50px !important;
     width: 120% !important;
   }
-
+  table.labores {
+    page-break-inside:avoid !important;
+  }
   div {
     float: none !important;
     .panel-heading {
@@ -105,7 +107,9 @@
   .separador {
     height: 150px !important;
   }
-
+.no_imprimir {
+  display: none;
+}
   // .break {
   //   display: table-row;
   //   page-break-inside:avoid !important;

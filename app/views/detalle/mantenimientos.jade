@@ -1,6 +1,6 @@
 table(class='detalle table-bordered' ng-repeat='maquina in mantenimientos' style="width:100%")
   tr
-    th(colspan=7 class='text-center')
+    th(colspan=8 class='text-center')
       h4 {{maquina.maquina}}
   tr
     th(style="width:7%") Fecha
@@ -9,7 +9,8 @@ table(class='detalle table-bordered' ng-repeat='maquina in mantenimientos' style
     th(style="width:35%") Insumo
     th(style="width:2%")  Cant.
     th(style="width:3%")  Costo 
-    th(style="width:43%") Desc.
+    th(style="width:3%")  Imp. 
+    th(style="width:40%") Desc.
   tbody(ng-class-odd="'tr_odd'" ng-repeat='item in maquina.detalle')
     tr
       td(rowspan='{{item.insumos.length}}') 
@@ -17,13 +18,15 @@ table(class='detalle table-bordered' ng-repeat='maquina in mantenimientos' style
       td(class='text-center' rowspan='{{item.insumos.length}}') {{item.doc.replace('PARMAN -','')}}
       td(rowspan='{{item.insumos.length}}') {{ item.horometro | number:0 }}
       td {{ item.insumos[0].nombre }}
-      td.text-center {{ item.insumos[0].cantidad }}
-      td.text-center {{ item.insumos[0].costo }}
-      td(class='observaciones' rowspan='{{item.insumos.length}}') {{item.obs}}
+      td.text-center {{ item.insumos[0].cantidad | number:0 }}
+      td.text-center {{ item.insumos[0].costoestandar | number:2 }}
+      td.text-center {{ item.insumos[0].costoestandar * item.insumos[0].cantidad | number:2 }}
+      td(class='observaciones' rowspan='{{item.insumos.length}}') {{ item.obs }}
     tr(ng-repeat='insumo in item.insumos' ng-if="$index >= 1" )  
       td {{insumo.nombre}}
-      td.text-center {{insumo.cantidad}}
-      td.text-center {{insumo.costo}}
+      td.text-center {{ insumo.cantidad | number:0 }}
+      td.text-center {{insumo.costoestandar | number:2 }}
+      td.text-center {{insumo.costoestandar * insumo.cantidad | number:2 }}
       
     //- td(ng-if='insumo.nombre.length <= 25') {{insumo.nombre}}
     //- td(ng-if='insumo.nombre.length > 25'  title='{{insumo.nombre}}' data-container='body') {{insumo.nombre | limitTo: 25}} ...

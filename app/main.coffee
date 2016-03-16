@@ -1,4 +1,4 @@
-angular.module('Lm', ['ngRoute'])
+angular.module('Lm', ['ngRoute','googlechart'])
 .run ($rootScope) ->
   # $rootScope.rootPath = 'http://lastmileapi.herokuapp.com/'
   $rootScope.rootPath = 'http://localhost:3000/'

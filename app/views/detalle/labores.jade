@@ -1,15 +1,21 @@
-table(class='detalle table-striped table-hover table-bordered' ng-repeat='maquina in labores' style="width:100%")
+table(class='detalle table-striped table-hover table-bordered labores' ng-repeat='maquina in labores' style="width:100%")
   tr
-    th(colspan=2 class='text-center')
+    th(colspan=3 class='text-center')
       h4 {{maquina.maquina}}
+    td(rowspan='{{maquina.actividades.length + 3}}')
+      div(google-chart chart='charts[maquina.maquina]' style='height:100%')
   tr
-    th(style="width:10%")  Actividad
-    th(style="width:5%")   Superficie
+    th(style="width:20%")  Actividad
+    th(style="width:15%")   Superficie
+    th(style="width:15%")   Sobre Total
   tr(ng-repeat='item in maquina.actividades')
     td(ng-if='item.nombre != 0') {{item.nombre}} 
     td(ng-if='item.nombre == 0' style='font-weight:600') TERCEROS 
-    td {{item.superficie}}
+    td(ng-init='acumula(maquina.maquina, item.superficie)') {{ item.superficie }}
+    td {{ item.superficie / totalActividad[maquina.maquina] * 100 | number:0 }} %
+
   tr(style='font-weight:600')
-    td Total
-    td {{getTotal(maquina.maquina) | number:2}}
-    
+    td TOTAL
+    td {{ totalActividad[maquina.maquina] | number:2 }}
+    td {{ totalControl[maquina.maquina] / totalActividad[maquina.maquina] * 100 | number:0 }} %
+    div(ng-init='resetControl()')

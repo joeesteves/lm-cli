@@ -14,7 +14,6 @@ angular.module 'Lm'
       scope[attr.tipo] = resp.data
     $timeout(
       ->
-        console.log 'tooltip'
         $('td').tooltip()
       2500
     )

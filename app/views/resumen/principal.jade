@@ -2,13 +2,13 @@ div(class='table-div panel panel-default' ng-repeat='i in obj')
   div(class='panel-heading text-center')  {{i.nombre}}
   table.table
     tr.headers
-      td(colspan=9) 
+      td(colspan=11) 
         h4.text-center.upcase {{i.nombre}}
     tr
       td(class='esquina' rowspan=2)
       td(class='fisicos left right' colspan=3)
         h5 Fisicos
-      td(colspan=5) 
+      td(colspan=7) 
         h5 Economicos U$S
     tr
       th.fisicos.left Gasoil
@@ -18,17 +18,21 @@ div(class='table-div panel panel-default' ng-repeat='i in obj')
       th Pers.
       th Mant.
       th Depr.
-      th Total
+      th Cos.
+      th Ing.
+      th Res.
     tr
       th Abs.
-      td.fisicos.left {{i.gasoil_cantidad | number:0 }} 
-      td.fisicos {{i.superficie | number:0 }}
-      td.fisicos.right {{i.horas | number:0 }}
-      td {{i.gasoil_costo | number:0 }}
-      td {{i.costo_operarios | number:0 }}
-      td {{i.gastos_varios | number:0 }}
-      td {{i.depreciacion | number:0 }}
-      td {{i.total | number:0 }}
+      td.fisicos.left {{ i.gasoil_cantidad | number:0 }} 
+      td.fisicos {{ i.superficie | number:0 }}
+      td.fisicos.right {{ i.horas | number:0 }}
+      td {{ i.gasoil_costo | number:0 }}
+      td {{ i.costo_operarios | number:0 }}
+      td {{ i.gastos_varios | number:0 }}
+      td {{ i.depreciacion | number:0 }}
+      td {{ i.total | number:0 }}
+      td {{ tarifa * i.superficie | number:0 }}
+      td {{ tarifa * i.superficie - i.total | number:0 }}
     tr.impar
       th Hs.
       td.fisicos.left {{ (i.gasoil_cantidad)/i.horas | number:2 }} 
@@ -38,7 +42,9 @@ div(class='table-div panel panel-default' ng-repeat='i in obj')
       td {{ (i.costo_operarios)/i.horas | number:2 }}
       td {{ (i.gastos_varios)/i.horas | number:2 }}
       td {{ (i.depreciacion)/i.horas | number:2 }}
-      td {{ (i.total)/i.horas | number:2 }}
+      td {{ i.total/i.horas | number:2 }}
+      td {{ (tarifa * i.superficie) /i.horas | number:2 }}
+      td {{ (tarifa * i.superficie - i.total) / i.horas | number:2 }}
     tr
       th Ha.
       td.fisicos.left {{ (i.gasoil_cantidad)/i.superficie | number:2 }} 
@@ -49,7 +55,11 @@ div(class='table-div panel panel-default' ng-repeat='i in obj')
       td {{ (i.gastos_varios)/i.superficie | number:2 }}
       td {{ (i.depreciacion)/i.superficie | number:2 }}
       td {{ (i.total)/i.superficie | number:2 }}
-
+      td {{ (tarifa * i.superficie) / i.superficie | number:2 }}
+      td {{ (tarifa * i.superficie - i.total) / i.superficie | number:2 }}
     tr
-      td(colspan=9) 
+      td(colspan=11 ng-if='i.nombre_operarios') 
         h5 Operador/es: {{i.nombre_operarios}}
+    tr
+      td(colspan=11 ng-if='i.implementos') 
+        h5 Implemento/es: {{i.implementos}}

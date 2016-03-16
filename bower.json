@@ -11,7 +11,8 @@
   "dependencies": {
     "angular": "~1.4.9",
     "bootstrap": "~3.3.6",
-    "angular-route": "~1.4.9"
+    "angular-route": "~1.4.9",
+    "angular-google-chart": "0.1.0"
   },
   "overrides": {
     "bootstrap": {

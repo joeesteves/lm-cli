@@ -5,6 +5,7 @@ angular.module 'Lm'
   reporte_nombre = $location.path().replace('/','')
   reporte = ''
   $scope.precio_gasoil = 1
+  $scope.tarifa = 1
   # Utiliza la directiva uploadFile
   $scope.upload = (tipo, file, reporte_attr) ->
     reporte = reporte_attr || reporte_nombre
