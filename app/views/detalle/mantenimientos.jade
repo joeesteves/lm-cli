@@ -27,11 +27,3 @@ table(class='detalle table-bordered' ng-repeat='maquina in mantenimientos' style
       td.text-center {{ insumo.cantidad | number:0 }}
       td.text-center {{insumo.costoestandar | number:2 }}
       td.text-center {{insumo.costoestandar * insumo.cantidad | number:2 }}
-      
-    //- td(ng-if='insumo.nombre.length <= 25') {{insumo.nombre}}
-    //- td(ng-if='insumo.nombre.length > 25'  title='{{insumo.nombre}}' data-container='body') {{insumo.nombre | limitTo: 25}} ...
-    //- td {{insumo.cantidad}}
-    //- td {{insumo.costoestandar}}
-  //- tr
-  //-   th(colspan=4 style="background-color:#337AB7; height:10px")
-    
