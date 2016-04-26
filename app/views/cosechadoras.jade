@@ -34,16 +34,21 @@ div.col-xs-10.col-xs-offset-1
         img(class='loading' src='images/iconos/upload/loading.gif' ng-hide='estado_upload.compras != "loading"')
         span(class='glyphicon glyphicon-remove upload_error text-warning' ng-hide='estado_upload.compras != "error"')
         span(class='glyphicon glyphicon-ok upload_ok' ng-hide='estado_upload.compras != "terminado"')
-      div.odd
+      div.even
         img(src='images/iconos/upload/tarifa.png')
         P TARIFA
         img(class='barra' src='images/iconos/upload/barra_blanca.png')
         input(class='input_gasoil' type='text' ng-model='tarifa')
+      div.odd
+        img(src='images/iconos/upload/abc.png')
+        P SUBTÍTULO
+        img(class='barra' src='images/iconos/upload/barra_blanca.png')
+        input(class='input_gasoil' style="width:55%" type='text' ng-model='$root.sub_titulo' ng-init='$root.sub_titulo="(01/07/2015 al 30/06/2016)"')
       div
         img(src='images/iconos/upload/gasoil.png')
         p(style='color:black') GASOIL
         img(class='barra' src='images/iconos/upload/barra_negra.png')
         input(class='input_gasoil' type='text' ng-model='precio_gasoil')
-        a(class='btn' href="#/reporte/cosechadoras/{{precio_gasoil}}/{{tarifa}}" ) GENERAR
+        a(class='btn' href="#/reporte/cosechadoras/{{precio_gasoil}}/{{tarifa}}") GENERAR
   hr.linea
   span.leyenda COMPROMETIDOS AL CRECIMIENTO JUNTOS.
