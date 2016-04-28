@@ -25,9 +25,9 @@
     margin-top: 300px !important;
   }
   .tr_odd {
-    background-color: #2E6DA4 !important;
+    background-color: #ccc !important;
     td {
-      color: white !important;
+      font-weight: bold;
     }
   }
   .table-striped > tbody > tr:nth-of-type(odd) {
