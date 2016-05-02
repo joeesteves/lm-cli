@@ -107,13 +107,20 @@
   .separador {
     height: 150px !important;
   }
-.no_imprimir {
-  display: none;
-}
+  .no_imprimir {
+    display: none;
+  }
   // .break {
   //   display: table-row;
   //   page-break-inside:avoid !important;
   // }
+  .total {
+    background-color: white !important;
+    td {
+      color: black !important;
+    }
+  }
+
 }
 
 @page{

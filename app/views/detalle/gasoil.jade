@@ -10,14 +10,19 @@ center
       th(style="width:5%")   Cant.
       th(style="width:5%")   Importe
       th(style="width:15%")  Desc.
-    tr(ng-repeat='item in maquina.detalle')  
-      td
-        div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
-      td.text-center {{ item.doc.replace('PARMAN -','') }}
-      td.text-center {{ item.horometro }}    
-      td {{ item.insumos[0].cantidad }}
-      td {{ item.insumos[0].cantidad * precio_gasoil | number:2 }}
-      td {{ item.obs}}
+    tbody(ng-repeat='item in maquina.detalle')
+      tr
+        td
+          div.fecha {{item.fecha |  date : 'dd-MM-yy'}}
+        td.text-center {{ item.doc.replace('PARMAN -','') }}
+        td.text-center {{ item.horometro }}    
+        td {{ item.insumos[0].cantidad }}
+        td {{ addTotal((item.insumos[0].cantidad * precio_gasoil)) | number:2 }}
+        td {{ item.obs}}
+      tr(ng-if='$index+1 == maquina.detalle.length')
+        td(colspan='4') 
+          b Total para {{ maquina.maquina }}
+        td(colspan='2') 
+          b {{ resetTotal() | number:2}}  
     tr
       th(colspan=6 style="background-color:#337AB7; height:10px")
-      

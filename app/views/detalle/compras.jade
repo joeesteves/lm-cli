@@ -17,8 +17,13 @@ table(class='detalle table-bordered' ng-repeat='maquina in compras' style="width
       td(rowspan='{{item.insumos.length}}') {{item.proveedor}}
       
       td {{item.insumos[0].nombre}}
-      td {{item.insumos[0].valor}}
+      td {{addTotal((item.insumos[0].valor))}}
       td(rowspan='{{item.insumos.length}}') {{item.obs}}
     tr(ng-repeat='insumo in item.insumos' ng-if="$index >= 1")
-      td {{inusmo.nombre}}
-      td {{inusmo.valor}}
+      td {{insumo.nombre}}
+      td {{addTotal((insumo.valor))}}
+    tr.total(ng-if='$index+1 == maquina.detalle.length')
+      td(colspan='4') 
+        b Total para {{ maquina.maquina }}
+      td(colspan='2') 
+        b {{ resetTotal() | number:2}}
